@@ -22,15 +22,26 @@
       </ion-list-header>
       <ion-item>
         <ion-label position="stacked">Nama <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+        <ion-input required type="text" [(ngModel)]="location.name" oninput="handleFirstNameValue(event)"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Alamat <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+        <ion-input required type="text" [(ngModel)]="location.address" oninput="handleFirstNameValue(event)"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Kecamatan <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+        <ion-input required type="text" [(ngModel)]="location.district" oninput="handleFirstNameValue(event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Latitude <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" [(ngModel)]="location.latitude"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Longitude <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" [(ngModel)]="location.longitude"></ion-input>
       </ion-item>
     </ion-list>
+    <button ion-button (click)="reload()">Reload</button>
+    <button ion-button (click)="saveEntry()">Simpan</button>
+    <button ion-button>Clear Form</button>
 </ion-content>
