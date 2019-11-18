@@ -11,7 +11,7 @@ export class LocationService {
   ) {
   }
   getData(callback){
-    this.obj = this.http.get('http://kotakamalserver/main')
+    this.obj = this.http.get('http://kotakamalserver/main/gets')
     this.obj.subscribe(
       data=>{
         console.log("Success main server",data)

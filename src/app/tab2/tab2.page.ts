@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocationService } from '../location.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  locations
+  constructor(
+    private locationService: LocationService
+  ) {
+    this.locationService.getData(result=>{
+      console.log(result)
+      this.locations = result
+    })
+  }
 
 }
