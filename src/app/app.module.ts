@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx'
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,

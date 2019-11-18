@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {Geolocation } from '@ionic-native/geolocation/ngx'
+import { Geolocation } from '@ionic-native/geolocation/ngx'
+import { LocationService } from '../location.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -14,7 +15,8 @@ export class Tab1Page {
     longitude:0
   }
   constructor(
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private locationService:LocationService
   ) 
   {
     this.reload()
@@ -28,5 +30,14 @@ export class Tab1Page {
       console.log("Error",err)
     })
   }
-  saveEntry(){}
+  getData(location){
+    this.locationService.getData(res=>{
+      console.log("Result of getData",res)
+    })
+  }
+  saveEntry(location){
+    this.locationService.saveData(location,res=>{
+      console.log("Result of saveData",res)
+    })
+  }
 }
