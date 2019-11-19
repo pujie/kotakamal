@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Entri Kotak
+      Entri
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,16 @@
 <ion-content>
     <ion-card class="welcome-card">
       <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to KotaKamal</ion-card-title>
+        <ion-card-subtitle>Yayasan Suara Hati</ion-card-subtitle>
+        <ion-card-title>YSH App</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Oi</p>
+        <p>
+          Akta notaris Indra Rachmandhana <i> M.Kn No 6 Tahun 2016</i>,
+          SK Menkum HAM RI <i>AHU-AH.01.06-1611 Tahun 2015</i>,
+          STP Dinsos Kab Sidoarjo <i>460/3875/438.5.6/2018</i>,
+          NPWP <i>03.025.127.6-643.000</i>
+        </p>
       </ion-card-content>
     </ion-card>
     <ion-list lines="none">
@@ -41,7 +46,7 @@
         <ion-input required type="text" [(ngModel)]="location.longitude"></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button (click)="reload()">Reload</button>
-    <button ion-button (click)="saveEntry(location)">Simpan</button>
-    <button ion-button>Clear Form</button>
+    <ion-button (click)="reload()">Reload</ion-button>
+    <ion-button (click)="saveEntry(location)">Simpan</ion-button>
+    <ion-button>Clear Form</ion-button>
 </ion-content>

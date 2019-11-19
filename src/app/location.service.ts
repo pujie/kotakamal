@@ -30,7 +30,7 @@ export class LocationService {
       })
      };
     console.log("Data to save",loc)
-    let params = 'name='+loc.name+'&address='+loc.address+'&district='+loc.district+'&latitude='+loc.latitude+'&longitude='+loc.longitude+''
+    let params = 'name='+loc.name+'&address='+loc.address+'&district='+loc.district+'&latitude='+loc.latitude+'&longitude='+loc.longitude+'&createuser='+loc.createuser+''
     this.obj = this.http.post('http://kotakamalserver/main/save',params,ParseHeaders)
     this.obj.subscribe(
       data=>{

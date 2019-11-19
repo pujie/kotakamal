@@ -12,7 +12,8 @@ export class Tab1Page {
     address:'',
     district:'',
     latitude:0,
-    longitude:0
+    longitude:0,
+    createuser:'fulan'
   }
   constructor(
     private geolocation: Geolocation,
