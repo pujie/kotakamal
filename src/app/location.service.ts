@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { AppvarService } from './appvar.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,10 +9,11 @@ export class LocationService {
   obj: Observable<any>
   constructor(
     private http: HttpClient,
+    private appvar: AppvarService
   ) {
   }
   getData(callback){
-    this.obj = this.http.get('http://kotakamalserver/main/gets')
+    this.obj = this.http.get(this.appvar.getServer()+'gets')
     this.obj.subscribe(
       data=>{
         console.log("Success main server",data)
@@ -31,7 +33,7 @@ export class LocationService {
      };
     console.log("Data to save",loc)
     let params = 'name='+loc.name+'&address='+loc.address+'&district='+loc.district+'&latitude='+loc.latitude+'&longitude='+loc.longitude+'&createuser='+loc.createuser+''
-    this.obj = this.http.post('http://kotakamalserver/main/save',params,ParseHeaders)
+    this.obj = this.http.post(this.appvar.getServer()+'save',params,ParseHeaders)
     this.obj.subscribe(
       data=>{
         console.log("Success save loc",data)
