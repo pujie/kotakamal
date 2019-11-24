@@ -16,5 +16,8 @@ export class Tab2Page {
       this.locations = result
     })
   }
-
+  showMap(loc){
+//    window.location.href = "https://www.google.com/maps/@"+loc.latitude+","+loc.longitude+"z"
+    window.location.href = "https://www.google.com/maps?q="+loc.latitude+","+loc.longitude+""
+  }
 }
