@@ -30,11 +30,13 @@
         <ion-input required type="text" [(ngModel)]="location.name"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label position="stacked">CP <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" [(ngModel)]="location.cp"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label position="stacked">Alamat <ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" [(ngModel)]="location.address"></ion-input>
       </ion-item>
-
-
       <ion-item>
         <ion-label position="stacked">Telp <ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" [(ngModel)]="location.phone"></ion-input>
@@ -53,6 +55,6 @@
       </ion-item>
     </ion-list>
     <ion-button (click)="reload()">Reload</ion-button>
-    <ion-button (click)="saveEntry(location)">Simpan</ion-button>
-    <ion-button>Clear Form</ion-button>
+    <ion-button (click)="saveEntry(location)" [disabled]="disableEntryButton">Simpan</ion-button>
+    <ion-button (click)="clear()">Clear Form</ion-button>
 </ion-content>

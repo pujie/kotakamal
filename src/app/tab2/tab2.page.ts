@@ -8,16 +8,29 @@ import { LocationService } from '../location.service';
 })
 export class Tab2Page {
   locations
+  filterparam
   constructor(
     private locationService: LocationService
   ) {
+    this.reload()
+  }
+  showMap(loc){
+//    window.location.href = "https://www.google.com/maps/@"+loc.latitude+","+loc.longitude+"z"
+    window.location.href = "https://www.google.com/maps?q="+loc.latitude+","+loc.longitude+""
+  }
+  reload(){
     this.locationService.getData(result=>{
       console.log(result)
       this.locations = result
     })
   }
-  showMap(loc){
-//    window.location.href = "https://www.google.com/maps/@"+loc.latitude+","+loc.longitude+"z"
-    window.location.href = "https://www.google.com/maps?q="+loc.latitude+","+loc.longitude+""
+  filter(event){
+    //console.log("Event",event)
+    this.locations.filter(item=>{
+      if(item.name.toLowerCase().indexOf(event) > -1){
+        console.log("Item",item,'filterparam',this.filterparam)
+        return item
+      }
+    })
   }
 }
