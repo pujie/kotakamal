@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content fullscreen>
-    <ion-searchbar [(ngModel)]="filterparam" (keyup)="filter(filterparam)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="filterparam" ></ion-searchbar>
   <ion-list>
     <ion-list-header>
       Yayasan Suara Hati
     </ion-list-header>
     <ion-button (click)="reload()">Reload</ion-button>
-    <ion-item *ngFor="let loc of locations">
+    <ion-item *ngFor="let loc of locations|filter:filterparam">
       <ion-avatar slot="start">
         <ion-icon name="play"></ion-icon>
       </ion-avatar>

@@ -11,8 +11,9 @@ import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './filter.pipe';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,FilterPipe],
   entryComponents: [],
   imports: [
     BrowserModule, 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LocationService } from '../location.service';
-
+import { FilterPipe } from '../filter.pipe'
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -25,12 +25,17 @@ export class Tab2Page {
     })
   }
   filter(event){
-    //console.log("Event",event)
+    console.log("Param",event)
     this.locations.filter(item=>{
-      if(item.name.toLowerCase().indexOf(event) > -1){
-        console.log("Item",item,'filterparam',this.filterparam)
-        return item
-      }
+
+      console.log("cat",item.name,"::::searchData",event)
+      console.log("indexof",item.name.search(event))
+      return item.name.search(event)>=0
+     //return item.name=="Berlian Optikal"
+//      if(item.name.toLowerCase().indexOf(event) > -1){
+//        console.log("Item",item,'filterparam',this.filterparam)
+//        return item
+//      }
     })
   }
 }
